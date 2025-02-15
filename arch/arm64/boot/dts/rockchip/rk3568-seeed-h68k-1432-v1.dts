@@ -592,9 +592,12 @@ pcie@10 {
 	status = "okay";
 };
 
+/* barfs in u-boot
 &rng {
 	status = "okay";
 };
+
+*/
 
 &saradc {
 	vref-supply = <&vcca_1v8>;
