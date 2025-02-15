@@ -5,21 +5,27 @@
 // Seeed Studios LinkStar H68k-1432-V1
 //
 // May also work with LinkStar H68k-1432-V2
-// Filename rk3568-seeed-h68k-1432-V1.dts
+// Filename rk3568-seeed-h68k-1432-v1.dts
 //
 // Copyright 2025 TahomaSoft bacon@tahomasoft.com
 // Derived from prior work by AmadeusGhost <amadeus@jmu.edu.cn>
 
 
 
- 
+/dts-v1/; 
 #include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/leds/common.h>
 #include <dt-bindings/input/input.h>
 #include <dt-bindings/pinctrl/rockchip.h>
 #include <dt-bindings/soc/rockchip,vop2.h>
 #include "rk3568.dtsi"
 
+
+
 / {
+	model = "Seeed LinkStar H68K-1432V1 (RK3568) DDR4 Board";
+	compatible = "seeed,rk3568-seeed-h68k-1432-v1","rockchip,rk3568";
+
 	aliases {
 		mmc0 = &sdmmc0;
 		mmc1 = &sdhci;
@@ -496,8 +502,13 @@
 	reset-gpios = <&gpio3 RK_PA4 GPIO_ACTIVE_HIGH>;
 	vpcie3v3-supply = <&vcc3v3_pcie>;
 	status = "okay";
+};
 
-	pcie@10 {
+
+/*  removed for testing
+
+
+pcie@10 {
 		reg = <0x00100000 0 0 0 0>;
 		#address-cells = <3>;
 		#size-cells = <2>;
@@ -509,11 +520,16 @@
 	};
 };
 
+*/
+
 &pcie3x2 {
 	num-lanes = <1>;
 	reset-gpios = <&gpio2 RK_PD0 GPIO_ACTIVE_HIGH>;
 	vpcie3v3-supply = <&vcc3v3_pcie>;
 	status = "okay";
+};
+
+/* Removed for testing
 
 	pcie@20 {
 		reg = <0x00200000 0 0 0 0>;
@@ -526,6 +542,8 @@
 		};
 	};
 };
+
+*/
 
 &pinctrl {
 	button {
@@ -680,3 +698,5 @@
 	};
 };
 #endif
+
+
