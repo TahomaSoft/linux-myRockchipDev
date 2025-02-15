@@ -1069,6 +1069,11 @@ properties:
         items:
           - const: rockchip,rk3588-toybrick-x0
           - const: rockchip,rk3588
+	  
+      - description: Seeed Studios RK3568 LinkStar H68l-1432V1
+        items:
+          - const: sinovoip,rk3568-seeed-h68k-1432-v1
+          - const: rockchip,rk3568
 
       - description: Sinovoip RK3308 Banana Pi P2 Pro
         items:
